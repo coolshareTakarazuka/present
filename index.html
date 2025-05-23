@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>景品応募フォーム</title>
+    <script
+      src="https://yubinbango.github.io/yubinbango/yubinbango.js"
+      charset="UTF-8"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d0a601627a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>
+      <img
+        src="https://i.ibb.co/Wv8X3LVh/1.png"
+        alt="IMG-5451"
+        width="100px"
+        height="100px"
+      />
+      クールシェア宝塚2025<br />
+      景品応募フォーム
+    </h1>
+    <form
+      id="userForm"
+      action="https://script.google.com/macros/s/AKfycbzt6-J_nZnZhiuTbTEyVn_4qxRLv5APD71j3jap4aeCqntslkLSHMz7KjQiL4UbWBk/exec"
+      method="post"
+      class="h-adr"
+    >
+      <h2>①ご希望の景品を選択してください</h2>
+
+      <h3>第一希望</h3>
+      <select name="firstChoice">
+        <option value="1"></option>
+        <option value="A">景品1</option>
+        <option value="B">景品2</option>
+        <option value="C">景品3</option>
+        <option value="D">景品4</option>
+        <option value="E">景品5</option>
+        <option value="F">景品6</option>
+        <option value="G">景品7</option>
+        <option value="H">景品8</option>
+        <option value="I">景品9</option>
+        <option value="J">景品10</option>
+      </select>
+
+      <h3>第二希望</h3>
+      <select name="secondChoice">
+        <option value="2"></option>
+        <option value="A">景品1</option>
+        <option value="B">景品2</option>
+        <option value="C">景品3</option>
+        <option value="D">景品4</option>
+        <option value="E">景品5</option>
+        <option value="F">景品6</option>
+        <option value="G">景品7</option>
+        <option value="H">景品8</option>
+        <option value="I">景品9</option>
+        <option value="J">景品10</option>
+      </select>
+
+      <h3>第三希望</h3>
+      <select name="thirdChoice">
+        <option value="3"></option>
+        <option value="A">景品1</option>
+        <option value="B">景品2</option>
+        <option value="C">景品3</option>
+        <option value="D">景品4</option>
+        <option value="E">景品5</option>
+        <option value="F">景品6</option>
+        <option value="G">景品7</option>
+        <option value="H">景品8</option>
+        <option value="I">景品9</option>
+        <option value="J">景品10</option></select
+      ><br />
+
+      <script>
+        // URLクエリからパラメータ取得してフォームに hidden input を追加
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
+
+        window.onload = function () {
+          const statusNo = getQueryParam("status");
+          if (statusNo) {
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "statusNo";
+            input.value = statusNo;
+            document.getElementById("userForm").appendChild(input);
+          }
+        };
+      </script>
+
+      <button type="submit">送信</button>
+    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="https://chikarauemori.github.io/test57/" target="_self"
+            ><i class="fa-solid fa-house"></i><br /><span class="iconname"
+              >ホーム</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="https://chikarauemori.github.io/test62/" target="_self"
+            ><i class="fa-solid fa-location-dot"></i><br /><span
+              class="iconname"
+              >マップ</span
+            ></a
+          >
+        </li>
+        <li>
+          <a
+            href="
+        https://liff.line.me/2007108080-jR8JqOgX"
+            target="_blank"
+            ><i class="fa-solid fa-qrcode"></i><br /><span class="iconname"
+              >QRコード</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="https://liff.line.me/2007154146-Y5jGo0G3" target="_blank"
+            ><i class="fa-solid fa-circle-user"></i><br /><span class="iconname"
+              >マイページ</span
+            ></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <style>
+      @media screen and (max-width: 768px) {
+        * {
+          font-size: 85%; /* スマホではフォントサイズを小さくする */
+        }
+      }
+      .menu {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu li {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .menu a i {
+        font-size: 24px;
+      }
+
+      .menu a span {
+        display: block;
+        font-size: 12px; /* テキストサイズ */
+        margin-top: 5px;
+      }
+
+      @media (max-width: 768px) {
+        .menu {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .menu li {
+          padding: 5px;
+        }
+      }
+      h1 {
+        font-family: sans-serif;
+        display: flex;
+        align-items: center; /* 縦方向の中央揃え */
+        justify-content: center; /* 横方向の中央揃え */
+        text-align: center;
+        background: skyblue;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+      }
+
+      input {
+        font-size: 200%;
+        background: skyblue;
+      }
+
+      button {
+        font-size: 200%;
+      }
+
+      select {
+        font-size: 200%;
+      }
+    </style>
+  </body>
+</html>
