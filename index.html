@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -36,62 +34,59 @@
       method="post"
       class="h-adr"
     >
-
       <h2>景品応募の流れ</h2>
       <ol>
-        <li>ご希望の景品を選択する</li>
+        <li>ご希望の景品を選択してください<br>(前回応募したものを選択しても大丈夫です)</li>
         <li></li>
       </ol>
-
-      <h3>※景品当選時は、景品応募初回にご入力いただいた住所に景品をお送りいたします</h3>
-      <h2>①ご希望の景品を選択してください</h2>
+      <h3>※景品当選時は、景品応募初回時にご入力いただいた住所に景品をお送りいたします</h3>
       <h2>①ご希望の景品を選択してください</h2>
 
       <h3>ご希望の景品を以下より選択してください<br />複数選択可能です！</h3>
 
       <div class="present-grid">
         <label
-          ><input type="checkbox" name="present" value="景品1" /><img
+          ><input type="checkbox" name="present[]" value="景品1" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品2" /><img
+          ><input type="checkbox" name="present[]" value="景品2" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品3" /><img
+          ><input type="checkbox" name="present[]" value="景品3" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品4" /><img
+          ><input type="checkbox" name="present[]" value="景品4" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品5" /><img
+          ><input type="checkbox" name="present[]" value="景品5" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品6" /><img
+          ><input type="checkbox" name="present[]" value="景品6" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品7" /><img
+          ><input type="checkbox" name="present[]" value="景品7" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品8" /><img
+          ><input type="checkbox" name="present[]" value="景品8" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present" value="景品9" /><img
+          ><input type="checkbox" name="present[]" value="景品9" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
@@ -101,7 +96,7 @@
       <label
         ><input
           type="checkbox"
-          name="present"
+          name="present[]"
           value="どれでもいい"
           class="other"
         />どれでもいい</label
@@ -130,121 +125,22 @@
       </style>
 
       <script>
-        document
+          document
           .getElementById("userForm")
           .addEventListener("submit", function (e) {
-            e.preventDefault(); // 1. 通常のフォーム送信をキャンセル
-            const checked = document.querySelectorAll(
+            const checkedCount = document.querySelectorAll(
               'input[name="present"]:checked'
-            );
-            if (checked.length === 0) {
+            ).length;
+            if (checkedCount === 0) {
+              e.preventDefault();
               alert("景品を1つ以上選択してください。");
-              return;
             }
-
-            const form = e.target;
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-              method: "POST",
-              body: formData,
-            })
-              .then((res) => res.text())
-              .then((result) => {
-                console.log(result);
-                // 任意：送信ボタンを無効にする
-                
-                form.querySelector("button[type='submit']").disabled = true;
-                form.querySelector("button[type='submit']").textContent = "送信中...";
-              })
-              .catch((err) => {
-                alert("送信に失敗しました");
-                console.error(err);
-              });
           });
       </script>
 
       
 
-      <span class="p-country-name" style="display: none">Japan</span>
-      <h2 class="question">②住所を入力してください</h2>
-      <h3>💡郵便番号を入力すると町名まで自動で入力されます</h3>
-      <h3>
-        💡マンションの部屋番号なども《以降の住所》にご入力をお願いいたします
-      </h3>
-      〒<input
-        type="tel"
-        name="address-1"
-        id="address-1"
-        class="p-postal-code"
-        size="3"
-        maxlength="3"
-      />
-      -
-      <input
-        type="tel"
-        name="address-2"
-        id="address-2"
-        class="p-postal-code"
-        size="4"
-        maxlength="4"
-      /><br /><br />
-      <div class="address">
-        都道府県:
-        <input
-          type="text"
-          name="address-3"
-          id="address-3"
-          class="p-region"
-        /><br />
-        地区町村:
-        <input
-          type="text"
-          name="address-4"
-          id="address-4"
-          class="p-locality"
-        /><br />
-        町名:
-        <input
-          type="text"
-          name="address-5"
-          id="address-5"
-          class="p-street-address p-extended-address"
-        />
-      </div>
-      以降の住所:
-      <input type="text" name="address-6" id="address-6" required /><br />
-      <h2 class="question">③日中繋がる連絡先を入力してください</h2>
-
-      <input
-        type="tel"
-        name="phoneNumber-1"
-        id="phoneNumber-1"
-        class="phoneNumber"
-        size="4"
-        maxlength="4"
-        required
-      />
-      -
-      <input
-        type="tel"
-        name="phoneNumber-2"
-        id="phoneNumber-2"
-        class="phoneNumber"
-        size="4"
-        maxlength="4"
-        required
-      />
-      -
-      <input
-        type="tel"
-        name="phoneNumber-3"
-        id="phoneNumber-3"
-        class="phoneNumber"
-        size="4"
-        maxlength="4"
-        required
-      /><br /><br />
+     <br /><br />
 
       <script>
         // URLクエリからパラメータ取得してフォームに hidden input を追加
