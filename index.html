@@ -34,52 +34,55 @@
       method="post"
       class="h-adr"
     >
+    <h2>景品応募の流れ</h2>
+    <ol>
+      <li>ご希望の景品を選択する</li></li>
+      <li>景品当選時は、最初に入力していただいた住所にお送りいたします</li>
+    </ol>
       <h2>①ご希望の景品を選択してください</h2>
+      
+      <h3>ご希望の景品を以下より選択してください<br>複数選択可能です！</h3>
+      
+      <div class="present-grid">
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="1" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="2" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="3" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="4" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="5" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="6" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="7" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="8" class="present"></label>
+      <label><input type="checkbox"><img src="https://i.ibb.co/Wv8X3LVh/1.png" name="present" value="9" class="present"></label>
+      
+      </div>
+      
+      <h3>どれでもいい場合は以下を選択してください<br>
+      </h3>
+      <label><input type="checkbox">どれでもいい</label><br><br>
 
-      <h3>第一希望</h3>
-      <select name="firstChoice">
-        <option value="1"></option>
-        <option value="A">景品1</option>
-        <option value="B">景品2</option>
-        <option value="C">景品3</option>
-        <option value="D">景品4</option>
-        <option value="E">景品5</option>
-        <option value="F">景品6</option>
-        <option value="G">景品7</option>
-        <option value="H">景品8</option>
-        <option value="I">景品9</option>
-        <option value="J">景品10</option>
-      </select>
+      <style>
+        .present-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列にする */
+  gap: 10px;
+  max-width: 600px;
+  margin: auto;
+}
 
-      <h3>第二希望</h3>
-      <select name="secondChoice">
-        <option value="2"></option>
-        <option value="A">景品1</option>
-        <option value="B">景品2</option>
-        <option value="C">景品3</option>
-        <option value="D">景品4</option>
-        <option value="E">景品5</option>
-        <option value="F">景品6</option>
-        <option value="G">景品7</option>
-        <option value="H">景品8</option>
-        <option value="I">景品9</option>
-        <option value="J">景品10</option>
-      </select>
+.present-grid label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      <h3>第三希望</h3>
-      <select name="thirdChoice">
-        <option value="3"></option>
-        <option value="A">景品1</option>
-        <option value="B">景品2</option>
-        <option value="C">景品3</option>
-        <option value="D">景品4</option>
-        <option value="E">景品5</option>
-        <option value="F">景品6</option>
-        <option value="G">景品7</option>
-        <option value="H">景品8</option>
-        <option value="I">景品9</option>
-        <option value="J">景品10</option></select
-      ><br />
+.present-grid img.present {
+  width: 100%;     /* 親要素に合わせて拡大縮小 */
+  height: auto;
+  max-width: 100px; /* 最大幅を指定して画像が大きくなりすぎないように */
+}
+      </style>
+
+      
 
       <script>
         // URLクエリからパラメータ取得してフォームに hidden input を追加
@@ -115,14 +118,14 @@
     <nav>
       <ul class="menu">
         <li>
-          <a href="https://chikarauemori.github.io/test57/" target="_self"
+          <a href="https://coolsharetakarazuka.github.io/home/" target="_blank"
             ><i class="fa-solid fa-house"></i><br /><span class="iconname"
               >ホーム</span
             ></a
           >
         </li>
         <li>
-          <a href="https://chikarauemori.github.io/test62/" target="_self"
+          <a href="https://coolsharetakarazuka.github.io/map/" target="_blank"
             ><i class="fa-solid fa-location-dot"></i><br /><span
               class="iconname"
               >マップ</span
@@ -132,15 +135,15 @@
         <li>
           <a
             href="
-        https://liff.line.me/2007108080-jR8JqOgX"
+          https://coolsharetakarazuka.github.io/how_to_play/"
             target="_blank"
-            ><i class="fa-solid fa-qrcode"></i><br /><span class="iconname"
-              >QRコード</span
+            ><i class="fa-regular fa-list-ol"></i><br /><span class="iconname"
+              >遊び方</span
             ></a
           >
         </li>
         <li>
-          <a href="https://liff.line.me/2007154146-Y5jGo0G3" target="_blank"
+          <a href="https://liff.line.me/2007302862-3mj9r7W5" target="_blank"
             ><i class="fa-solid fa-circle-user"></i><br /><span class="iconname"
               >マイページ</span
             ></a
@@ -150,11 +153,7 @@
     </nav>
 
     <style>
-      @media screen and (max-width: 768px) {
-        * {
-          font-size: 85%; /* スマホではフォントサイズを小さくする */
-        }
-      }
+      
       .menu {
         position: fixed;
         left: 0;
@@ -204,9 +203,10 @@
         justify-content: center; /* 横方向の中央揃え */
         text-align: center;
         background: skyblue;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-size: 85%;
       }
 
       input {
@@ -221,6 +221,12 @@
       select {
         font-size: 200%;
       }
+
+      .address input {
+  background-color: #fff !important;
+}
+
+
     </style>
   </body>
 </html>
