@@ -30,7 +30,7 @@
     </h1>
     <form
       id="userForm"
-      action="https://script.google.com/macros/s/AKfycbw5CoCPurg9RDKH6UwDOGLyd8SYNT4Qr12conAgTVZTmRGYvjJixsyV9REem5HeHH2PpA/exec"
+      action="https://script.google.com/macros/s/AKfycbygWleg_95qL_49ZudrOsZF1mkw8HjHyWpb4W6MZBTb8SsxkmkTJnx4LnirUpEICXNmVg/exec"
       method="post"
       class="h-adr"
     >
@@ -39,80 +39,72 @@
         <li>ご希望の景品を選択する</li>
         <li></li>
       </ol>
-      <h3>※景品当選時は、景品応募初回に入力していただいた住所に<br>景品をお送りいたします</h3>
+
+      <h3>※景品当選時は、景品応募初回にご入力いただいた住所に景品をお送りいたします</h3>
       <h2>①ご希望の景品を選択してください</h2>
 
       <h3>ご希望の景品を以下より選択してください<br />複数選択可能です！</h3>
 
       <div class="present-grid">
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="1"
+          ><input type="checkbox" name="present"
+          value="1" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="2"
+          ><input type="checkbox" name="present"
+          value="2" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="3"
+          ><input type="checkbox" name="present"
+          value="3" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="4"
+        ><input type="checkbox" name="present"
+        value="4" /><img
+          src="https://i.ibb.co/Wv8X3LVh/1.png"            
+          class="present"
+      /></label>
+        <label
+          ><input type="checkbox" name="present"
+          value="5" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="5"
+          ><input type="checkbox" name="present"
+          value="6" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="6"
+          ><input type="checkbox" name="present"
+          value="7" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="7"
+          ><input type="checkbox" name="present"
+          value="8" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
         <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="8"
-            class="present"
-        /></label>
-        <label
-          ><input type="checkbox" /><img
-            src="https://i.ibb.co/Wv8X3LVh/1.png"
-            name="present"
-            value="9"
+          ><input type="checkbox" name="present"
+          value="9" /><img
+            src="https://i.ibb.co/Wv8X3LVh/1.png"            
             class="present"
         /></label>
       </div>
 
       <h3>どれでもいい場合は以下を選択してください<br /></h3>
       <label
-        ><input type="checkbox" name="present" value="10" />どれでもいい</label
+        ><input type="checkbox" name="present" value="10" class="other" />どれでもいい</label
       ><br /><br />
 
       <style>
@@ -151,7 +143,85 @@
           });
       </script>
 
-     <br /><br />
+      <span class="p-country-name" style="display: none">Japan</span>
+      <h2 class="question">②住所を入力してください</h2>
+      <h3>💡郵便番号を入力すると町名まで自動で入力されます</h3>
+      <h3>
+        💡マンションの部屋番号なども《以降の住所》にご入力をお願いいたします
+      </h3>
+      〒<input
+        type="tel"
+        name="address-1"
+        id="address-1"
+        class="p-postal-code"
+        size="3"
+        maxlength="3"
+      />
+      -
+      <input
+        type="tel"
+        name="address-2"
+        id="address-2"
+        class="p-postal-code"
+        size="4"
+        maxlength="4"
+      /><br /><br />
+      <div class="address">
+        都道府県:
+        <input
+          type="text"
+          name="address-3"
+          id="address-3"
+          class="p-region"
+        /><br />
+        地区町村:
+        <input
+          type="text"
+          name="address-4"
+          id="address-4"
+          class="p-locality"
+        /><br />
+        町名:
+        <input
+          type="text"
+          name="address-5"
+          id="address-5"
+          class="p-street-address p-extended-address"
+        />
+      </div>
+      以降の住所:
+      <input type="text" name="address-6" id="address-6" required /><br />
+      <h2 class="question">③日中繋がる連絡先を入力してください</h2>
+
+      <input
+        type="tel"
+        name="phoneNumber-1"
+        id="phoneNumber-1"
+        class="phoneNumber"
+        size="4"
+        maxlength="4"
+        required
+      />
+      -
+      <input
+        type="tel"
+        name="phoneNumber-2"
+        id="phoneNumber-2"
+        class="phoneNumber"
+        size="4"
+        maxlength="4"
+        required
+      />
+      -
+      <input
+        type="tel"
+        name="phoneNumber-3"
+        id="phoneNumber-3"
+        class="phoneNumber"
+        size="4"
+        maxlength="4"
+        required
+      /><br /><br />
 
       <script>
         // URLクエリからパラメータ取得してフォームに hidden input を追加
