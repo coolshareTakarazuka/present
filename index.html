@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -36,72 +34,108 @@
       method="post"
       class="h-adr"
     >
-      
       <h2>景品応募の流れ</h2>
       <ol>
-        <li>ご希望の景品を選択してください<br>(前回応募したものを選択しても大丈夫です)</li>
+        <li>
+          ご希望の景品を選択してください<br />(前回応募したものを選択しても大丈夫です)
+        </li>
         <li></li>
       </ol>
-      <h3>※景品当選時は、景品応募初回時にご入力いただいた住所に景品をお送りいたします</h3>
+      <h3>
+        ※景品当選時は、景品応募初回時にご入力いただいた住所に景品をお送りいたします
+      </h3>
       <h2>①ご希望の景品を選択してください</h2>
       <h3>ご希望の景品を以下より選択してください<br />複数選択可能です！</h3>
 
       <div class="present-grid">
         <label
-          ><input type="checkbox" name="present1" value="景品1" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present1"
+            value="景品1"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present2" value="景品2" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present2"
+            value="景品2"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present3" value="景品3" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present3"
+            value="景品3"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present4" value="景品4" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present4"
+            value="景品4"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present5" value="景品5" class="present-checkbox""/><img
+          ><input type="checkbox" name="present5" value="景品5"
+          class="present-checkbox""/><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present6" value="景品6" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present6"
+            value="景品6"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present7" value="景品7" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present7"
+            value="景品7"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present8" value="景品8" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present8"
+            value="景品8"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
         <label
-          ><input type="checkbox" name="present9" value="景品9" class="present-checkbox"/><img
+          ><input
+            type="checkbox"
+            name="present9"
+            value="景品9"
+            class="present-checkbox" /><img
             src="https://i.ibb.co/Wv8X3LVh/1.png"
             class="present"
         /></label>
       </div>
 
-      <h3>どれでもいい場合は以下を選択してください<br /></h3>
+      <h3>どれでもいい場合は以下を選択してください<br />(全ての景品に応募いたします。)</h3>
       <label
         ><input
           type="checkbox"
           name="present10"
           value="どれでもいい"
-          class="other"
-           class="present-checkbox"
+          class="other present-checkbox"
+          id="other"
         />どれでもいい</label
       ><br /><br />
 
@@ -128,18 +162,29 @@
       </style>
 
       <script>
-          document.getElementById("userForm").addEventListener("submit", function (e) {
-    const checkedCount = document.querySelectorAll(
-      'input.present-checkbox:checked'
-    ).length;
-    if (checkedCount === 0) {
-      e.preventDefault();
-      alert("景品を1つ以上選択してください。");
-    }
-  });
-      </script>
+        document
+          .getElementById("userForm")
+          .addEventListener("submit", function (e) {
+            const otherChecked = document.querySelector("input.other").checked;
 
-      
+            if (otherChecked) {
+              document
+                .querySelectorAll("input.present-checkbox:not(.other)")
+                .forEach((cb) => {
+                  cb.checked = true;
+                });
+            }
+
+            const checkedCount = document.querySelectorAll(
+              "input.present-checkbox:checked"
+            ).length;
+
+            if (checkedCount === 0) {
+              e.preventDefault();
+              alert("景品を1つ以上選択してください");
+            }
+          });
+      </script>
 
       <br /><br />
 
@@ -174,40 +219,42 @@
     <br />
     <br />
     <br />
-<nav>
-    <ul class="menu">
-      <li>
-        <a href="https://coolsharetakarazuka.github.io/home/" target="_self"
-          ><i class="fa-solid fa-house"></i><br /><span class="iconname"
-            >ホーム</span
-          ></a
-        >
-      </li>
-      <li>
-        <a href="https://coolsharetakarazuka.github.io/map/" target="_self"
-          ><i class="fa-solid fa-location-dot"></i><br /><span class="iconname"
-            >マップ</span
-          ></a
-        >
-      </li>
-      <li>
-        <a
-          href="
-        https://coolsharetakarazuka.github.io/how_to_play/" target="_self"
-          ><i class="fa-solid fa-list-ol"></i><br /><span class="iconname"
-            >遊び方</span
-          ></a
-        >
-      </li>
-      <li>
-        <a href="https://liff.line.me/2007302862-3mj9r7W5" target="_self"
-          ><i class="fa-solid fa-stamp"></i><br /><span class="iconname"
-            >スタンプラリー</span
-          ></a
-        >
-      </li>
-    </ul>
-  </nav>
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="https://coolsharetakarazuka.github.io/home/" target="_self"
+            ><i class="fa-solid fa-house"></i><br /><span class="iconname"
+              >ホーム</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="https://coolsharetakarazuka.github.io/map/" target="_self"
+            ><i class="fa-solid fa-location-dot"></i><br /><span
+              class="iconname"
+              >マップ</span
+            ></a
+          >
+        </li>
+        <li>
+          <a
+            href="
+        https://coolsharetakarazuka.github.io/how_to_play/"
+            target="_self"
+            ><i class="fa-solid fa-list-ol"></i><br /><span class="iconname"
+              >遊び方</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="https://liff.line.me/2007302862-3mj9r7W5" target="_self"
+            ><i class="fa-solid fa-stamp"></i><br /><span class="iconname"
+              >スタンプラリー</span
+            ></a
+          >
+        </li>
+      </ul>
+    </nav>
 
     <style>
       .menu {
